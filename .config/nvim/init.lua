@@ -1,59 +1,60 @@
-vim.cmd('set expandtab')
-vim.cmd('set tabstop=2')
-vim.cmd('set softtabstop=2')
-vim.cmd('set shiftwidth=2')
-vim.cmd('imap jj <Esc>')
+-- vim.cmd('set expandtab')
+-- vim.cmd('set tabstop=2')
+-- vim.cmd('set softtabstop=2')
+-- vim.cmd('set shiftwidth=2')
+-- vim.cmd('imap jj <Esc>')
 
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		'git',
-		'clone',
-		'--filter=blob:none',
-		'https://github.com/folke/lazy.nvim.git',
-		'--branch=stable',
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
+-- local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+-- if not vim.loop.fs_stat(lazypath) then
+-- 	vim.fn.system({
+-- 		'git',
+-- 		'clone',
+-- 		'--filter=blob:none',
+-- 		'https://github.com/folke/lazy.nvim.git',
+-- 		'--branch=stable',
+-- 		lazypath,
+-- 	})
+-- end
+-- vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-    { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
-    {
-        'nvim-telescope/telescope.nvim', version = '*',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        }
-    },
+-- local plugins = {
+--     { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 --     {
---         'nvim-treesitter/nvim-treesitter',
---         lazy = false,
---         build = ':TSUpdate'
---     }
-}
-
-local opts = {}
-
-require('lazy').setup(plugins, opts)
-
--- Catppuccin Theme
-require('catppuccin').setup({
-    flavor = 'mocha'
-});
-vim.cmd.colorscheme 'catppuccin'
-
--- Telescope (fuzzy finder)
-require('telescope').setup()
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-
--- Tree-sitter (Abstract Syntax Tree)
--- require('nvim-treesitter').setup {
---     install_dir = vim.fn.stdpath('data') .. '/site'
+--         'nvim-telescope/telescope.nvim', version = '*',
+--         dependencies = {
+--             'nvim-lua/plenary.nvim',
+--             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+--         }
+--     },
+-- --     {
+-- --         'nvim-treesitter/nvim-treesitter',
+-- --         lazy = false,
+-- --         build = ':TSUpdate'
+-- --     }
 -- }
--- require('nvim-treesitter').install { 'javascript' }
 
+-- local opts = {}
+
+-- require('lazy').setup(plugins, opts)
+
+-- -- Catppuccin Theme
+-- require('catppuccin').setup({
+--     flavor = 'mocha'
+-- });
+-- vim.cmd.colorscheme 'catppuccin'
+
+-- -- Telescope (fuzzy finder)
+-- require('telescope').setup()
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+-- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+-- vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+-- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- -- Tree-sitter (Abstract Syntax Tree)
+-- -- require('nvim-treesitter').setup {
+-- --     install_dir = vim.fn.stdpath('data') .. '/site'
+-- -- }
+-- -- require('nvim-treesitter').install { 'javascript' }
+
+require("config.lazy")

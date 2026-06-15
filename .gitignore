@@ -1,3 +1,4 @@
 .DS_Store
 .config/zsh/plugins/
+.config/zsh/.zcompdump
 
