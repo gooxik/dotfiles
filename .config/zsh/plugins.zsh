@@ -25,7 +25,6 @@ _zplugin_load zdharma-continuum fast-syntax-highlighting
 _zplugin_load zsh-users zsh-autosuggestions
 _zplugin_load zsh-users zsh-history-substring-search
 _zplugin_load jeffreytse zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY='jj'
 
 # Load node version manager
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

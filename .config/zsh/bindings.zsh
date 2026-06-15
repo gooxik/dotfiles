@@ -6,6 +6,8 @@ ZVM_VI_HIGHLIGHT_BACKGROUND=none
 ZVM_VI_HIGHLIGHT_FOREGROUND=none
 ZVM_VI_HIGHLIGHT_EXTRASTYLE=none
 
+ZVM_VI_INSERT_ESCAPE_BINDKEY='jj'
+
 zvm_after_init() {
   # Control+Right
   bindkey '^[[1;5C' forward-word
