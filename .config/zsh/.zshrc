@@ -24,20 +24,6 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Setup Fuzzy finder
-if command -v fzf &>/dev/null; then
-  source <(fzf --zsh)
-else
-  echo "Warning: fzf is not installed"
-fi
-
-# Pretty prompt setup
-if command -v starship &>/dev/null; then
-  source <(starship init zsh)
-else
-  echo "Warning: starship is not installed"
-fi
-
 source "$ZDOTDIR/fzf.zsh"
 source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/aliases.zsh"

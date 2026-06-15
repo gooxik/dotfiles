@@ -1,3 +1,10 @@
+# Setup Fuzzy finder
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+else
+  echo "Warning: fzf is not installed"
+fi
+
 fd="$(command -v fd 2>/dev/null)"
 fdfind="$(command -v fdfind 2>/dev/null)"
 
