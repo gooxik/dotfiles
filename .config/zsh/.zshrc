@@ -1,3 +1,10 @@
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(brew --prefix ruby)/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
+export PATH="$(brew --prefix openssh)/bin:$PATH"
+
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+
 [[ -d "$XDG_STATE_HOME/zsh" ]] || mkdir -p "$XDG_STATE_HOME/zsh"
 [[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
 HISTFILE="$XDG_STATE_HOME/zsh/history"

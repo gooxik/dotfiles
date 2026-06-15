@@ -13,8 +13,10 @@ fi
 
 export GPG_TTY=$(tty)
 
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
+# need to set this in .zshrc on mac, otherwize .zprofile overrides it
+# export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="$(brew --prefix ruby)/bin:$PATH"
+# export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
+# export PATH="$(brew --prefix openssh)/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
