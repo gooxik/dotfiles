@@ -1,9 +1,8 @@
 # Linux Homebrew
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -d /opt/homebrew/opt && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$(brew --prefix ruby)/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
 export PATH="$(brew --prefix openssh)/bin:$PATH"

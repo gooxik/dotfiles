@@ -17,11 +17,11 @@ fi
 # Better cat
 if command -v bat &>/dev/null; then
   alias cat='bat'
-  export MANPAGER='bat -l man -p'
+  export MANPAGER="sh -c \"col -bx | bat -l man -p\""
 elif command -v batcat &>/dev/null; then
   alias bat='batcat'
   alias cat='bat'
-  export MANPAGER='bat -l man -p'
+  export MANPAGER="sh -c \"col -bx | bat -l man -p\""
 else
   echo 'Warning: neither bat nor batcat command found, will use cat instead'
 fi
