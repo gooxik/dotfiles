@@ -1,3 +1,8 @@
+# Linux Homebrew
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$(brew --prefix ruby)/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.4.0/bin:$PATH"
@@ -22,7 +27,11 @@ setopt NOBEEP
 setopt NUMERIC_GLOB_SORT
 
 # Initialize zoxide (better cd command)
-eval "$(zoxide init zsh)"
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init zsh)"
+else
+  echo 'Warning: zoxide is not installed'
+fi
 
 # Setup autocompletion system
 autoload -Uz compinit
