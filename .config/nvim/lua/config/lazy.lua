@@ -36,6 +36,6 @@ require("lazy").setup({
       "netrwPlugin",
     }
   },
-  install = { colorscheme = { "catppuccin-mocha" } },
+  -- install = { colorscheme = { "catppuccin-mocha" } },
   checker = { enabled = false }
 })
