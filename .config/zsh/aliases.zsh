@@ -47,3 +47,8 @@ alias -- -='cd -'
 
 # Neovim instead of vim
 alias vim='nvim'
+
+alias gst="git status"
+alias gca="git commit -am"
+alias gaa="git add -A"
+
